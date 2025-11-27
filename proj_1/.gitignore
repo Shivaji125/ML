@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Data
+data/processed/
+data/raw/data.csv  # Usually exclude large raw data
+
+# Models/Artifacts
+models/
+
+# Environment
+venv/
+.env
+
+# Notebooks
+.ipynb_checkpoints

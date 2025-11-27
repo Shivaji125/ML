@@ -1,0 +1,21 @@
+
+# Directories (relative to the project root, used by paths.py)
+DATA_DIR : "data"
+RAW_DIR : "raw"
+PROCESSED_DIR : "processed"
+MODEL_DIR: "models"
+
+# Data Files
+RAW_DATA_FILENAME :  "churn_bank.csv"
+TRAIN_DATA_FILENAME: "train_csv"
+TEST_DATA_FILENAME : "test.csv"
+
+# Artifacts
+PREPROCESSOR_FILENAME : "preprocessor.pkl"
+MODEL_FILENAME : "logistic_regression.pkl"
+
+# Model/Feature Parameters 
+TEST_SIZE : 0.3
+RANDOM_STATE : 42
+
+TARGET_COLUMN : "Exited"
