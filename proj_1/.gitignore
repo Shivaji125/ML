@@ -6,7 +6,7 @@ __pycache__/
 
 # Data
 data/processed/
-data/raw/data.csv  # Usually exclude large raw data
+data/raw/churn_bank.csv  # Usually exclude large raw data
 
 # Models/Artifacts
 models/
