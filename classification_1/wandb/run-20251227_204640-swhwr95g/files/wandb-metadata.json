@@ -1,0 +1,40 @@
+{
+  "os":  "Windows-10-10.0.26200-SP0",
+  "python":  "CPython 3.9.23",
+  "startedAt":  "2025-12-27T15:16:40.205143Z",
+  "program":  "C:\\Users\\shiva\\Desktop\\Folder\\gitpractise\\ML\\classification_1\\run_pipeline.py",
+  "codePath":  "classification_1\\run_pipeline.py",
+  "codePathLocal":  "run_pipeline.py",
+  "git":  {
+    "remote":  "https://github.com/Shivaji125/ML.git",
+    "commit":  "c87f0e95977f3ab7e78212f906cf70313dce27be"
+  },
+  "email":  "manthrishivaji13579@gmail.com",
+  "root":  "C:\\Users\\shiva\\Desktop\\Folder\\gitpractise\\ML\\classification_1",
+  "host":  "predator001",
+  "executable":  "C:\\Users\\shiva\\anaconda3\\envs\\new_mlops_env\\python.exe",
+  "cpu_count":  4,
+  "cpu_count_logical":  8,
+  "gpu":  "NVIDIA GeForce GTX 1650 Ti",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "510808551424",
+      "used":  "354243620864"
+    }
+  },
+  "memory":  {
+    "total":  "8412778496"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce GTX 1650 Ti",
+      "memoryTotal":  "4294967296",
+      "cudaCores":  1024,
+      "architecture":  "Turing",
+      "uuid":  "GPU-4e123ed2-5dfa-1462-8edb-9c4cbbc587b5"
+    }
+  ],
+  "cudaVersion":  "12.5",
+  "writerId":  "phkk3r7f5x6gubpa44rncfmfe4gde3vs"
+}

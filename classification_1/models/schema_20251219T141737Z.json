@@ -1,0 +1,17 @@
+{
+    "columns": [
+        "RowNumber",
+        "CustomerId",
+        "Surname",
+        "CreditScore",
+        "Geography",
+        "Gender",
+        "Age",
+        "Tenure",
+        "Balance",
+        "NumOfProducts",
+        "HasCrCard",
+        "IsActiveMember",
+        "EstimatedSalary"
+    ]
+}
