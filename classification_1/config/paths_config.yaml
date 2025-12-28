@@ -1,0 +1,26 @@
+
+# Directories
+DATA_DIR: "data"
+RAW_DIR: "raw"
+PROCESSED_DIR: "processed"
+MODEL_DIR: "models"
+
+# Data files
+RAW_DATA_FILENAME: "churn_bank.csv"
+TRAIN_DATA_FILENAME: "train.csv"
+TEST_DATA_FILENAME: "test.csv"
+
+# Artifacts
+PREPROCESSOR_FILENAME: "preprocessor.joblib"
+MODEL_FILENAME: "best_model.joblib"
+METRICS_FILENAME: "metrics.json"
+ACTIVE_MODEL_FILENAME: "active_model.joblib"
+
+# Model/Feature Parameters
+TEST_SIZE: 0.25
+RANDOM_STATE: 42
+
+TARGET_COLUMN: "Exited"
+NUMERICAL_FEATURES : ['CreditScore', 'Age', 'Balance', 'EstimatedSalary',]
+CATEGORICAL_FEATURES: ['Geography','Gender',]
+PRE_ENCODED_FEATURES: ['NumOfProducts','HasCrCard','IsActiveMember','Tenure',]
