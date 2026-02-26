@@ -6,7 +6,20 @@ __pycache__/
 # C extensions
 *.so
 
+# model artifacts
+models/*.joblib
+models/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# WandDB
+wandb/
+
+#
+
 # Distribution / packaging
+data/
 .Python
 build/
 develop-eggs/
@@ -50,6 +63,9 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+.pytest_cache/
+tests/
+pytest.ini
 
 # Translations
 *.mo
