@@ -36,13 +36,13 @@ class ModelPredictor:
         """
         Perform inference on validated input data.
         """
-        # 1️⃣ Validate
+        # 1️. Validate
         input_data = self.validator.validate_dataframe(input_data)
 
-        # 2️⃣ Transform
+        # 2️. Transform
         # transformed_data = self.preprocessor.transform(input_data)
         # here i need only model which was saved as (preprocessor + model)
-        # 3️⃣ Predict    
+        # 3️. Predict    
         preds = self.model.predict(input_data)
 
         probs = None
