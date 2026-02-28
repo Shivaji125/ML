@@ -11,6 +11,10 @@ app = FastAPI(
 
 predictor = ModelPredictor()
 
+@app.get("/")
+def root():
+    return {"message": "Welcome to the Churn Predictor API. Use /predict endpoint to get predictions."}
+
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
