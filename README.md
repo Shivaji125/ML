@@ -1,1 +1,2 @@
-Random Machine Learning Projects.
+Random Machine Learning Projects & MLOPs.
+
