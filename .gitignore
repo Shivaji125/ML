@@ -15,7 +15,7 @@ models/
 
 # WandDB
 wandb/
-
+__pycache__/
 #
 
 # Distribution / packaging
