@@ -1,5 +1,7 @@
 from fastapi import FastAPI, HTTPException
 import pandas as pd
+import asyncio
+from contextlib import asynccontextmanager
 
 from src.inference.predictor import ModelPredictor
 from src.inference.schemas import ChurnInput, ChurnPrediction
@@ -9,26 +11,31 @@ app = FastAPI(
     version= "1.0.0"
 )
 
-predictor = ModelPredictor()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    print("Loading model...")
+    app.state.predictor = ModelPredictor()
+    print("Model loaded successfully")
+    yield
+    print("Shutting down...")
 
-@app.get("/")
-def root():
-    return {"message": "Welcome to the Churn Predictor API. Use /predict endpoint to get predictions."}
+app = FastAPI(lifespan=lifespan)
 
-@app.get("/health")
-def health_check():
-    return {"status": "ok"}
 
-@app.post("/predict", response_model=ChurnPrediction)
-def predict(input_data: ChurnInput):
+@app.post("/predict")
+async def predict(input_data: ChurnInput):
+
     try:
-        df  = pd.DataFrame([input_data.model_dump()])
-        preds, probs = predictor.predict(df)
-
-        return ChurnPrediction(
-            prediction = int(preds[0]),
-            probability = float(probs[0]) if probs is not None else None
+        df = pd.DataFrame([input_data.dict()])
+        preds, probs = await asyncio.to_thread(
+            app.state.predictor.predict,
+            df
         )
-    
+
+        return {
+            "prediction": preds.tolist(),
+            "probability": probs.tolist() if probs is not None else None
+        }
+
     except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e))
