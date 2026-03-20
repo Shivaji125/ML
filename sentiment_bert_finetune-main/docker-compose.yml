@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./backend
+    container_name: sentiment-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  frontend:
+    build: ./frontend
+    container_name: sentiment-frontend
+    ports:
+      - "7860:7860"
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      - PYTHONUNBUFFERED=1
+      - API_URL=http://backend:8000/predict
+    restart: unless-stopped
