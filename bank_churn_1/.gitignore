@@ -65,8 +65,7 @@ coverage.xml
 .pytest_cache/
 cover/
 .pytest_cache/
-tests/
-pytest.ini
+# tests/ and pytest.ini should NOT be ignored — keep them in version control
 
 # Translations
 *.mo
